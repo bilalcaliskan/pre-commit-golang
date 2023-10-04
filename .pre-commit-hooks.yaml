@@ -1,0 +1,12 @@
+-   id: test
+    name: Go Unit Tests
+    description: Run Go unit tests excluding vendor directories
+    entry: scripts/test.sh
+    language: script
+    args: []
+-   id: vendor
+    name: Go Unit Tests
+    description: Start vendoring process
+    entry: scripts/vendor.sh
+    language: script
+    args: []
