@@ -5,5 +5,5 @@ fail() {
   exit 1
 }
 
-go mod vendor $@ || fail
+go mod vendor || fail
 
