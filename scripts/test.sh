@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 
-source scripts/shared.sh
+# get the directory of the current script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Initialize ARGS with any provided arguments that don't end in .go
+# source shared.sh using the determined directory
+source "$DIR/shared.sh"
+
+# initialize ARGS with any provided arguments that don't end in .go
 ARGS=""
 declare -A packages
 for arg in "$@"; do
@@ -14,7 +18,7 @@ for arg in "$@"; do
     fi
 done
 
-# If there are any .go files, run tests for their respective packages
+# if there are any .go files, run tests for their respective packages
 if [[ ${#packages[@]} -ne 0 ]]; then
     for pkg in "${!packages[@]}"; do
         echo "running tests for package: $pkg"
