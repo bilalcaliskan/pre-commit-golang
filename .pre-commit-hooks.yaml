@@ -4,14 +4,18 @@
     This is a hook to start vendoring process on a Golang project
   entry: scripts/vendor.sh
   language: script
+  files: '\.go$|go\.mod|go\.sum'
   pass_filenames: false
+
 - id: tidy
   name: tidy
   description: >
     This is a hook to tidy on a Golang project
   entry: scripts/tidy.sh
   language: script
+  files: '\.go$|go\.mod|go\.sum'
   pass_filenames: false
+
 - id: test
   name: test
   description: >
