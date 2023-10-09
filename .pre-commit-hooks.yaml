@@ -1,12 +1,16 @@
--   id: test
-    name: test
-    description: Run Go unit tests excluding vendor directories
-    entry: scripts/test.sh
-    language: script
-    args: []
--   id: vendor
-    name: vendor
-    description: Start vendoring process
-    entry: scripts/vendor.sh
-    language: script
-    args: []
+- id: vendor
+  name: vendor
+  description: >
+    This is a hook to start vendoring process on a git repository
+  entry: scripts/vendor.sh
+  language: script
+  pass_filenames: false
+- id: test
+  name: test
+  description: >
+    This is a hook to run tests on changed files on a git repository
+  entry: scripts/test.sh
+  language: script
+  files: '\.go$'
+  args: []
+  pass_filenames: true

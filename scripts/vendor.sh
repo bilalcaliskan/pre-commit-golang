@@ -1,9 +1,8 @@
 #!/bin/bash
 
 fail() {
-  echo "vendoring failed"
+  echo "$1 failed"
   exit 1
 }
 
-go mod vendor || fail
-
+go mod vendor || fail "vendoring"
