@@ -1,7 +1,7 @@
 - id: vendor
   name: vendor
   description: >
-    This is a hook to start vendoring process on a Golang project
+    This hook runs 'go mod vendor' command.
   entry: scripts/vendor.sh
   language: script
   files: '\.go$|go\.mod|go\.sum'
@@ -10,18 +10,36 @@
 - id: tidy
   name: tidy
   description: >
-    This is a hook to tidy on a Golang project
+    This hook runs 'go mod tidy' command.
   entry: scripts/tidy.sh
   language: script
   files: '\.go$|go\.mod|go\.sum'
   pass_filenames: false
 
+- id: vet
+  name: vet
+  description: >
+    This hook runs 'go vet' command.
+  entry: scripts/tidy.sh
+  language: script
+  files: '\.go$'
+  pass_filenames: true
+
 - id: test
   name: test
   description: >
-    This is a hook to run tests on changed files on a Golang project
+    This hook runs 'go test' for each directory that has a changed file.
   entry: scripts/test.sh
   language: script
   files: '\.go$'
   args: []
   pass_filenames: true
+
+- id: golangci-lint
+  name: golangci-lint
+  description: >
+    Runs `golangci-lint`, requires https://github.com/golangci/golangci-lint
+  entry: scripts/golangci-lint.sh
+  language: script
+  files: '\.go$'
+  pass_filenames: false
