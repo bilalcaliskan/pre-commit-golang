@@ -20,7 +20,7 @@
   name: vet
   description: >
     This hook runs 'go vet' command.
-  entry: scripts/tidy.sh
+  entry: scripts/vet.sh
   language: script
   files: '\.go$'
   pass_filenames: true
