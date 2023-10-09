@@ -7,4 +7,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 source "$DIR/shared.sh"
 
 # start vendoring process
-go mod vendor $@ || fail "vendoring"
+go mod tidy $@ || fail "tidy"
