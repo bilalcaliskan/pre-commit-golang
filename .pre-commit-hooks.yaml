@@ -1,14 +1,21 @@
 - id: vendor
   name: vendor
   description: >
-    This is a hook to start vendoring process on a git repository
+    This is a hook to start vendoring process on a Golang project
   entry: scripts/vendor.sh
+  language: script
+  pass_filenames: false
+- id: tidy
+  name: tidy
+  description: >
+    This is a hook to tidy on a Golang project
+  entry: scripts/tidy.sh
   language: script
   pass_filenames: false
 - id: test
   name: test
   description: >
-    This is a hook to run tests on changed files on a git repository
+    This is a hook to run tests on changed files on a Golang project
   entry: scripts/test.sh
   language: script
   files: '\.go$'
