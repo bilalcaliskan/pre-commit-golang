@@ -1,8 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-fail() {
-  echo "$1 failed"
-  exit 1
-}
+source shared.sh
 
 go mod vendor || fail "vendoring"
