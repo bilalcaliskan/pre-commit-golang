@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source shared.sh
+source scripts/shared.sh
 
 # Initialize ARGS with any provided arguments that don't end in .go
 ARGS=""
