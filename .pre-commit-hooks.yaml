@@ -43,3 +43,13 @@
   language: script
   files: '\.go$'
   pass_filenames: false
+
+# - id: gofmt
+#   name: gofmt
+#   description: >
+#     Runs `gofmt`, requires golang
+#   entry: scripts/gofmt.sh
+#   language: script
+#   args: ["-l", "-w"]
+#   files: '\.go$'
+#   pass_filenames: true
